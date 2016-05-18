@@ -57,7 +57,7 @@
     "backbone.syphon": "^0.6.3",
     "bootstrap": "^3.3.6",
     "jquery": "^2.1.4",
-    "lodash": "^4.12.0",
+    "lodash": "^3.10.1",
     "nprogress": "^0.2.0"
   }
 }

@@ -2,6 +2,7 @@
 var path = require('path');
 var webpack = require('webpack');
 
+var out = path.resolve(__dirname);
 var src = path.resolve(__dirname, 'src');
 var nodeModules = path.resolve(__dirname, 'node_modules');
 var production = process.env.NODE_ENV === 'production';
@@ -49,6 +50,15 @@ loaders = [
   }, {
     test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
     loader: 'url?limit=10000&mimetype=image/svg+xml'
+  }, {
+    test: require.resolve('backbone'),
+    loader: 'expose?Backbone'
+  }, {
+    test: require.resolve('jquery'),
+    loader: 'expose?jQuery!expose?$'
+  }, {
+    test: require.resolve('lodash'),
+    loader: 'expose?_'
   }
 ];
 
@@ -60,7 +70,7 @@ module.exports = {
   },
   context: src,
   output: {
-    path: path.resolve(src, 'bundle'),
+    path: path.resolve(out, 'dist'),
     filename: 'bundle.js'
   },
   module: {
@@ -78,6 +88,6 @@ module.exports = {
   },
   plugins: plugins,
   externals: {
-    jquery: 'jQuery'
+    girder: 'girder'
   }
 };
