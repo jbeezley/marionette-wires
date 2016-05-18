@@ -1,0 +1,31 @@
+.page-header
+  a.btn.btn-primary.pull-right(href='#colors/new') Create
+  h1 Colors: Index
+
+.colors__list
+
+.text-center
+  ul.pagination
+    if prev
+      li
+        a(href='#colors?page=#{prev}') <<
+    else
+      li.disabled
+        a <<
+
+    each pages
+      if current
+        li.active
+          a #{page}
+            span.sr-only
+              | (current)
+      else
+        li
+          a(href='#colors?page=#{page}') #{page}
+
+    if next
+      li
+        a(href='#colors?page=#{next}') >>
+    else
+      li.disabled
+        a >>

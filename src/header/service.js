@@ -1,3 +1,5 @@
+import './styles.styl';
+
 import Service from 'backbone.service';
 import {Collection} from 'backbone';
 import View from './view';
@@ -16,7 +18,7 @@ const HeaderService = Service.extend({
   requests: {
     add: 'add',
     remove: 'remove',
-    activate: 'activate',
+    activate: 'activate'
   },
 
   add(model) {

@@ -1,5 +1,5 @@
 import {ItemView} from 'backbone.marionette';
-import template from './item-template.hbs';
+import template from './item-template.jade';
 
 export default ItemView.extend({
   tagName: 'a',

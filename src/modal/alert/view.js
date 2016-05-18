@@ -1,6 +1,6 @@
 import {ItemView} from 'backbone.marionette';
 import {Model} from 'backbone';
-import template from './template.hbs';
+import template from './template.jade';
 
 export default ItemView.extend({
   template: template,
@@ -10,7 +10,7 @@ export default ItemView.extend({
   },
 
   triggers: {
-    'click .btn-primary' : 'confirm',
-    'click .close'       : 'cancel'
+    'click .btn-primary': 'confirm',
+    'click .close': 'cancel'
   }
 });

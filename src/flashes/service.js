@@ -1,3 +1,5 @@
+import './styles.styl';
+
 import Service from 'backbone.service';
 import Collection from './collection';
 import CollectionView from './collection-view';
@@ -17,7 +19,7 @@ const FlashesService = Service.extend({
 
   requests: {
     add: 'add',
-    remove: 'remove',
+    remove: 'remove'
   },
 
   add(flash) {

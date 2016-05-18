@@ -2,6 +2,8 @@ import './plugins';
 import Backbone from 'backbone';
 import $ from 'jquery';
 
+import './main.styl';
+
 import Application from './application/application';
 
 import ModalService from './modal/service';

@@ -2,7 +2,6 @@ import {Router} from 'backbone-routing';
 import HeaderService from '../header/service';
 import LayoutView from './layout-view';
 import IndexRoute from './index/route';
-import ShowRoute from './show/route';
 
 export default Router.extend({
   initialize(options = {}) {
@@ -25,17 +24,10 @@ export default Router.extend({
   },
 
   routes: {
-    'books'     : 'index',
-    'books/:id' : 'show'
+    books: 'index'
   },
 
   index() {
     return new IndexRoute();
-  },
-
-  show() {
-    return new ShowRoute({
-      layout: this.layout
-    });
   }
 });

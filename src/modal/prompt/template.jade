@@ -1,0 +1,12 @@
+.modal-header
+  button.close(type="button" aria-hidden="true") != '&times;'
+  h4.modal-title #{title}
+
+.modal-body
+  .form-group
+    label(for="modal__input--prompt") #{text}
+    input#modal__input--prompt.form-control(type="text")
+
+.modal-footer
+  button.btn.btn-default(type='button') Cancel
+  button.btn.btn-primary(type='button') OK

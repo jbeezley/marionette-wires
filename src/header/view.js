@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import {history} from 'backbone';
 import {ItemView} from 'backbone.marionette';
-import template from './template.hbs';
+import template from './template.jade';
 
 export default ItemView.extend({
   template: template,
@@ -18,8 +18,8 @@ export default ItemView.extend({
 
   templateHelpers() {
     return {
-      primaryItems   : this.serializeWhere({ type: 'primary' }),
-      secondaryItems : this.serializeWhere({ type: 'secondary' })
+      primaryItems: this.serializeWhere({ type: 'primary' }),
+      secondaryItems: this.serializeWhere({ type: 'secondary' })
     };
   },
 
@@ -32,7 +32,7 @@ export default ItemView.extend({
   },
 
   events: {
-    'show.bs.collapse #navbar-collapse' : 'onCollapseShow'
+    'show.bs.collapse #navbar-collapse': 'onCollapseShow'
   },
 
   onCollapseShow() {

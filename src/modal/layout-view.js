@@ -1,13 +1,13 @@
 import {LayoutView} from 'backbone.marionette';
-import template from './layout-template.hbs';
+import template from './layout-template.jade';
 
 export default LayoutView.extend({
   template: template,
   className: 'modal fade',
 
   attributes: {
-    'tabindex' : -1,
-    'role' : 'dialog'
+    'tabindex': -1,
+    'role': 'dialog'
   },
 
   regions: {
@@ -15,8 +15,8 @@ export default LayoutView.extend({
   },
 
   triggers: {
-    'shown.bs.modal'  : 'modal:show',
-    'hidden.bs.modal' : 'modal:hide',
+    'shown.bs.modal': 'modal:show',
+    'hidden.bs.modal': 'modal:hide'
   },
 
   onShow() {

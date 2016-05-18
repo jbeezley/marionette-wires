@@ -1,0 +1,6 @@
+if dismissible
+  button.close(type="button" data-dismiss="alert")
+    span(aria-hidden="true") != '&times;'
+    span.sr-only Close
+strong #{title}
+!= body

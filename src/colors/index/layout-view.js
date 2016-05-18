@@ -2,7 +2,7 @@ import _ from 'lodash';
 import {LayoutView} from 'backbone.marionette';
 import CollectionView from './collection-view';
 import {Collection} from 'backbone';
-import template from './layout-template.hbs';
+import template from './layout-template.jade';
 
 export default LayoutView.extend({
   template: template,
@@ -35,13 +35,13 @@ export default LayoutView.extend({
   },
 
   templateHelpers() {
-    let total   = Math.ceil(this.collection.length / this.state.limit);
+    let total = Math.ceil(this.collection.length / this.state.limit);
     let current = Math.ceil(this.state.start / this.state.limit) + 1;
 
     let pages = _.times(total, index => {
       return {
-        current : index + 1 === current,
-        page    : index + 1
+        current: index + 1 === current,
+        page: index + 1
       };
     });
 
