@@ -10,6 +10,7 @@ export default Route.extend({
   fetch() {
     return storage.findAll().then(collection => {
       this.collection = collection;
+    }).catch((arg) => {
     });
   },
 

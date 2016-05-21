@@ -21,8 +21,7 @@ export default LayoutView.extend({
 
   onShow() {
     this.$el.modal({
-      show: false,
-      backdrop: 'static'
+      show: false
     });
   },
 

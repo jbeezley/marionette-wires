@@ -11,8 +11,7 @@ import HeaderService from './header/service';
 import FlashesService from './flashes/service';
 
 import IndexRouter from './index/router';
-import ColorsRouter from './colors/router';
-import BooksRouter from './books/router';
+import AuthRouter from './auth/router';
 
 let app = new Application();
 
@@ -34,17 +33,18 @@ $(document).ajaxError(() => {
     title: 'Server Error'
   });
 });
+$(function () {
+  girder.router.enabled(false);
 
-app.index = new IndexRouter({
-  container: app.layout.content
+  // load routes after load to override girder's routes
+  app.index = new IndexRouter({
+    container: app.layout.content
+  });
+
+  app.auth = new AuthRouter({
+    container: app.layout.content
+  });
+
+  Backbone.history.start();
 });
 
-app.colors = new ColorsRouter({
-  container: app.layout.content
-});
-
-app.books = new BooksRouter({
-  container: app.layout.content
-});
-
-Backbone.history.start();

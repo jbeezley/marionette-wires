@@ -18,13 +18,14 @@ export default Application.extend({
     this.layout.render();
 
     this.listenTo(routerChannel, {
-      'before:enter:route' : this.onBeforeEnterRoute,
-      'enter:route'        : this.onEnterRoute,
-      'error:route'        : this.onErrorRoute
+      'before:enter:route': this.onBeforeEnterRoute,
+      'enter:route': this.onEnterRoute,
+      'error:route': this.onErrorRoute
     });
   },
 
   onBeforeEnterRoute() {
+    debugger;
     this.transitioning = true;
     // Don't show for synchronous route changes
     _.defer(() => {
@@ -35,12 +36,14 @@ export default Application.extend({
   },
 
   onEnterRoute() {
+    debugger;
     this.transitioning = false;
     this.$body.scrollTop(0);
     nprogress.done();
   },
 
   onErrorRoute() {
+    debugger;
     this.transitioning = false;
     nprogress.done(true);
   }

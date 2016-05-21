@@ -1,0 +1,15 @@
+.modal-header
+  button.close(type="button" aria-hidden="true") &times;
+  h4.modal-title #{title}
+
+.modal-body
+  .form-group
+    label(for="dsa-user") Username/email
+    input#dsa-login.form-control(type="text")
+  .form-group
+    label(for="dsa-password") Password
+    input#dsa-password.form-control(type="password")
+
+.modal-footer
+  button.btn.btn-default(type='button') Cancel
+  button.btn.btn-primary(type='button') OK
